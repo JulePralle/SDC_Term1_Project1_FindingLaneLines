@@ -1,4 +1,4 @@
-# Finding Lane Lines Project
+# Finding Lane Lines 
 Self-Driving Car Engineer Nanodegree Program
 
 ---
@@ -17,7 +17,7 @@ The following video shows the result:
 
 ## Reflection
 
-# My Approach
+### My Approach
 The pipeline consists of 5 steps. First, I converted the image to Grayscale, then I used the Gaussfilter to extract interferences out of the image, afterwards I used the Canny function to create an image of edges, then I created the region of interest using three points for a triangle. In the end I created the Hough lines, which are shown as red lines in the image marking the lanes.
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by first calculating the slope and center point of all lines and adding them to lists separating by right and left lanes. The next step was to average the data of center and slope to get a single value to create a single line for left and right. At the end I extrapolated the lines to the bottom of the image and a specific height using geometric relationships. 
 The code can be found in this notebook 'P1-JP.ipynb'.
@@ -25,18 +25,18 @@ The code can be found in this notebook 'P1-JP.ipynb'.
 The image shows the steps of my approach:
 ![alt text][image1]
 
-# Potential Shortcomings
+### Potential Shortcomings
 *curvy roads
 *bumpy roads, so that the region of interest maybe doesn’t fit for this situation
 
-# Suggested improvements
+### Suggested improvements
 *extract more lines which are mistaken i.e. too vertical or horizontal.
 *use more than one line to better detect curves
 *use more or more advanced computer vision techniques
 
 
 ---
-### Udacity Part 
+## Udacity Part 
 
 The Project
 ---
