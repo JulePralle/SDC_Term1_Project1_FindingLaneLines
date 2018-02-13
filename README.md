@@ -22,7 +22,7 @@ My project includes the following files:
 * P1-JP.ipynb: notebook containing the code 
 * yellow.mp4/gif: a video showing the lane line detection on the yellow line example 
 * white.mp4/gif: a video showing the lane line detection on the white line example 
-* writeup.md: summarizing the results
+* README.md: this writeup summarizing the results
 
 
 ## Reflection
@@ -34,6 +34,7 @@ The code can be found in this notebook <A HREF="P1-JP.ipynb" target="_blank">P1-
 
 
 The image shows the steps of my approach:
+
 ![alt text][image1]
 
 ### Potential Shortcomings
