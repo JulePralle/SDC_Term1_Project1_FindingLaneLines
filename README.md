@@ -29,7 +29,7 @@ My project includes the following files:
 ### My Approach
 The pipeline consists of 5 steps. First, I converted the image to Grayscale, then I used the Gaussfilter to extract interferences out of the image, afterwards I used the Canny function to create an image of edges, then I created the region of interest using three points for a triangle. In the end I created the Hough lines, which are shown as red lines in the image marking the lanes.
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by first calculating the slope and center point of all lines and adding them to lists separating by right and left lanes. The next step was to average the data of center and slope to get a single value to create a single line for left and right. At the end I extrapolated the lines to the bottom of the image and a specific height using geometric relationships. 
-The code can be found in this notebook:
+The code can be found in this <A HREF="P1-JP.ipynb" target="_blank">notebook</A>
 ```sh
 P1-JP.ipynb
 ```
