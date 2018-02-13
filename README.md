@@ -4,13 +4,14 @@ Self-Driving Car Engineer Nanodegree Program
 ---
 [//]: # (Image References)
 
-[image1]: ./approach.jpg "Image summarizing the approach"
+[image1]: ./approach.JPG "Image summarizing the approach"
 
 
 
 ## Introduction
 In this project highway lane lines were detected on a video stream using Python and OpenCV image analysis techniques. 
-The following video shows the result:
+
+The following videos show the result:
 
 ![yellow](./yellow.gif) 
 ![white](./white.gif)
