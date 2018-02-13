@@ -1,33 +1,42 @@
-#**Finding Lane Lines on the Road** 
-[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+# Finding Lane Lines Project
+Self-Driving Car Engineer Nanodegree Program
 
-<img src="laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
-
-Overview
 ---
+[//]: # (Image References)
 
-When we drive, we use our eyes to decide where to go.  The lines on the road that show us where the lanes are act as our constant reference for where to steer the vehicle.  Naturally, one of the first things we would like to do in developing a self-driving car is to automatically detect lane lines using an algorithm.
-
-In this project you will detect lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
-
-To complete the project, two files will be submitted: a file containing project code and a file containing a brief write up explaining your solution. We have included template files to be used both for the [code](https://github.com/udacity/CarND-LaneLines-P1/blob/master/P1.ipynb) and the [writeup](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md).The code file is called P1.ipynb and the writeup template is writeup_template.md 
-
-To meet specifications in the project, take a look at the requirements in the [project rubric](https://review.udacity.com/#!/rubrics/322/view)
+[image1]: ./approach.jpg "Image summarizing the approach"
 
 
-Creating a Great Writeup
+
+## Introduction
+In this project highway lane lines were detected on a video stream using Python and OpenCV image analysis techniques. 
+The following video shows the result:
+
+![yellow](./yellow.gif) 
+![white](./white.gif) 
+
+## Reflection
+
+# My Approach
+The pipeline consists of 5 steps. First, I converted the image to Grayscale, then I used the Gaussfilter to extract interferences out of the image, afterwards I used the Canny function to create an image of edges, then I created the region of interest using three points for a triangle. In the end I created the Hough lines, which are shown as red lines in the image marking the lanes.
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function by first calculating the slope and center point of all lines and adding them to lists separating by right and left lanes. The next step was to average the data of center and slope to get a single value to create a single line for left and right. At the end I extrapolated the lines to the bottom of the image and a specific height using geometric relationships. 
+The code can be found in this notebook 'P1-JP.ipynb'.
+
+The image shows the steps of my approach:
+![alt text][image1]
+
+# Potential Shortcomings
+*curvy roads
+*bumpy roads, so that the region of interest maybe doesn’t fit for this situation
+
+# Suggested improvements
+*extract more lines which are mistaken i.e. too vertical or horizontal.
+*use more than one line to better detect curves
+*use more or more advanced computer vision techniques
+
+
 ---
-For this project, a great writeup should provide a detailed response to the "Reflection" section of the [project rubric](https://review.udacity.com/#!/rubrics/322/view). There are three parts to the reflection:
-1. Describe the pipeline
-2. Identify any shortcomings
-3. Suggest possible improvements
-
-We encourage using images in your writeup to demonstrate how your pipeline works.  
-
-All that said, please be concise!  We're not looking for you to write a book here: just a brief description.
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup. Here is a link to a [writeup template file](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md). 
-
+### Udacity Part 
 
 The Project
 ---
